@@ -10,18 +10,27 @@
 </head>
 
 <body>
-    <main id="root">
+    <main>
         <header>
-            <h1>toDoList</h1>
-            <div class="form-wrapper">
+            <h1>TO DO LIST</h1>
+            <div>
                 <input class="input-text" type="text" placeholder="text here">
-                <button class="btn" type="submit">+</button>
-                <button class="even">even</button>
-                <button class="odd">odd</button>
-                <button class="delfrst">del frst el</button>
-                <button class="dellst">del lst el</button>
+                <button class="btn">Add</button>
+            </div>
+
+            <div class="buttons-wrapper">
+                <span>
+                    <button class="even">Even</button>
+                    <button class="odd">Odd</button>
+                </span>
+
+                <span>
+                    <button class="delfrst">Delete first element</button>
+                    <button class="dellst">Delete last element</button>
+                </span>
             </div>
             <span class="error"></span>
+
         </header>
 
         <div class="listWrapper"></div>
