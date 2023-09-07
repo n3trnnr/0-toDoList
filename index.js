@@ -16,7 +16,6 @@ const setLocalStorage = () => {
 }
 
 const createElement = () => {
-
     if (input.value.length === 0) {
         header.appendChild(error)
         error.textContent = 'Введите вашу задачу!'
@@ -38,7 +37,7 @@ const createElement = () => {
 
         itemWrapper.appendChild(item)
         itemWrapper.appendChild(delBtn)
-        listWrapper.appendChild(itemWrapper)
+        listWrapper.prepend(itemWrapper)
         setLocalStorage()
 
         input.value = ''
@@ -97,9 +96,13 @@ btnOdd.addEventListener('click', selectOdd)
 delfrst.addEventListener('click', deleteFirstEl)
 dellst.addEventListener('click', deleteLastEl)
 listWrapper.addEventListener('click', (event) => {
-    if (event.target.tagName === 'SPAN') {
-        event.target.classList.toggle('cheched')
+    if (event.target.tagName === 'SPAN' && !event.target.classList.contains('checked')) {
+        event.target.classList.toggle('checked')
         listWrapper.appendChild(event.target.parentNode)
+        setLocalStorage()
+    } else if (event.target.tagName === 'SPAN' && event.target.classList.contains('checked')) {
+        event.target.classList.remove('checked')
+        listWrapper.prepend(event.target.parentNode)
         setLocalStorage()
     } else if (event.target.tagName === 'BUTTON') {
         let delEl = event.target.parentNode

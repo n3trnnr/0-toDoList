@@ -51,6 +51,7 @@ main>header>div>button.btn {
 
 main>header>div>button.btn:hover {
     background: orange;
+    transition-duration: 0.3s;
 }
 
 main>header>div.buttons-wrapper>span>button {
@@ -65,6 +66,7 @@ main>header>div.buttons-wrapper>span>button {
 
 main>header>div.buttons-wrapper>span>button:hover {
     background: rgb(0, 132, 255);
+    transition-duration: 0.3s;
 }
 
 main>header>span.error {
@@ -103,15 +105,16 @@ main>div.listWrapper>div.itemWrapper>span.task-el {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(211, 211, 211);
+    background: rgb(180, 180, 180);
     cursor: pointer;
 }
 
 main>div.listWrapper>div.itemWrapper>span.task-el:hover {
-    background-color: rgb(181, 181, 181);
+    background-color: rgb(200, 200, 200);
+    transition-duration: 0.3s;
 }
 
-main>div.listWrapper>div.itemWrapper>span.task-el.cheched {
+main>div.listWrapper>div.itemWrapper>span.task-el.checked {
     position: relative;
     width: 95%;
     height: 30px;
@@ -119,9 +122,11 @@ main>div.listWrapper>div.itemWrapper>span.task-el.cheched {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background: rgb(110, 110, 110);
+    color: white;
 }
 
-main>div.listWrapper>div.itemWrapper>span.task-el.cheched::before {
+main>div.listWrapper>div.itemWrapper>span.task-el.checked::before {
     content: '✓';
     position: absolute;
     left: 10%;
@@ -134,10 +139,10 @@ main>div.listWrapper>div.itemWrapper>span.task-el.cheched::before {
     text-align: center;
 }
 
-main>div.listWrapper>div.itemWrapper>span.task-el.cheched::after {
+main>div.listWrapper>div.itemWrapper>span.task-el.checked::after {
     content: "";
     position: absolute;
-    border: 1px solid #000;
+    border: 1px solid #ffffff;
     top: 50%;
     width: 50%;
 }
@@ -172,6 +177,7 @@ main>div.listWrapper>div.itemWrapper>button.del-btn {
 main>div.listWrapper>div.itemWrapper>button.del-btn:hover {
     background: rgba(255, 0, 0, 0.50);
     color: black;
+    transition-duration: 0.3s;
 }
 
 main>footer {
