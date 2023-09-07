@@ -5,7 +5,9 @@ const btnEven = document.querySelector('.even')
 const btnOdd = document.querySelector('.odd')
 const delfrst = document.querySelector('.delfrst')
 const dellst = document.querySelector('.dellst')
-const error = document.querySelector('.error')
+const header = document.querySelector('header')
+const error = document.createElement('span')
+error.classList.add('error')
 
 let todos;
 const setLocalStorage = () => {
@@ -16,10 +18,13 @@ const setLocalStorage = () => {
 const createElement = () => {
 
     if (input.value.length === 0) {
+        header.appendChild(error)
         error.textContent = 'Введите вашу задачу!'
     } else {
+        if (header.lastChild.tagName === 'SPAN') {
+            header.lastChild.remove()
+        }
         error.textContent = ''
-
         const itemWrapper = document.createElement('div')
         const item = document.createElement('span')
         const delBtn = document.createElement('button')
@@ -101,7 +106,13 @@ listWrapper.addEventListener('click', (event) => {
         delEl.remove()
         setLocalStorage()
     }
-}, false)
+})
+header.addEventListener('click', (event) => {
+    if (event.target.tagName === 'SPAN') {
+        const error = event.target
+        error.remove()
+    }
+})
 
 if (localStorage.getItem('todos')) {
     listWrapper.innerHTML = localStorage.getItem('todos')
